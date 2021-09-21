@@ -111,3 +111,9 @@ ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 # Load / source zsh plugins.
 . "${XDG_DATA_HOME}/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 . "${XDG_DATA_HOME}/zsh-autosuggestions/zsh-autosuggestions.zsh"
+# SSH working aground
+_ssh_auth_save() {
+    ln -sf "$SSH_AUTH_SOCK" "$HOME/.ssh/ssh-auth-sock.$HOSTNAME"
+}
+alias screen='_ssh_auth_save ; export HOSTNAME=$(hostname) ; screen'
+alias tmux='_ssh_auth_save ; export HOSTNAME=$(hostname) ; tmux new -s'
