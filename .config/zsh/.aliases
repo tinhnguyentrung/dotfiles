@@ -39,7 +39,7 @@ change-terminal-font () {
     local windows_user="$(powershell.exe '$env:UserName' | sed -e 's/\r//g')"
     local terminal_config="/c/Users/${windows_user}/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json"
 
-    perl -i -pe "s/\"fontSize\": ${from}/\"fontSize\": ${to}/g" "${terminal_config}"
+    perl -i -pe "s/\"size\": ${from}/\"size\": ${to}/g" "${terminal_config}"
 }
 
 start-recording () {
@@ -149,7 +149,10 @@ alias gi="git init && git symbolic-ref HEAD refs/heads/main"
 
 alias pf="fzf --preview='less {}' --bind shift-up:preview-page-up,shift-down:preview-page-down"
 
+alias gcl="git diff --name-only --diff-filter=U"
+
 alias k="kubectl"
+alias tf="terraform"
 
 # A way to define and run tasks in a project. It's like make except it's pure
 # Bash so there's no make limitations like not being able to forward arguments.

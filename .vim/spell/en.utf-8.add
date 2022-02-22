@@ -1,4 +1,5 @@
 1080p
+3D
 ACH
 ACM
 AHK
@@ -9,6 +10,7 @@ APM
 APS
 AT2005
 AWS
+ActiveJob
 ActiveRecord
 Airtable
 Akka
@@ -44,6 +46,7 @@ CentOS
 Certbot
 Chromebook
 CircleCI
+ClickHouse
 CloudFormation
 CloudFormation's
 CloudFront
@@ -114,6 +117,7 @@ GKE
 GPG
 GVim
 GalliumOS
+Gemfile
 GenServer
 Genomic
 Geocities
@@ -152,12 +156,14 @@ IIS
 IPS
 IaC
 Idempotency
+InertiaJS
 InfluxDB
 InnoGear
 IrfanView
 JIT
 JS
 JSON
+JSONB
 Javascript
 Jinja
 Jira
@@ -168,6 +174,7 @@ K8s
 KPI
 Kanban
 Keyserver
+KinD
 Knex
 Koa
 Kubernetes
@@ -179,8 +186,10 @@ Linode's
 LiveView
 Livewire
 Logentries
+Loggly
 Lua
 M1
+MBPs
 MD5
 MP3
 MP3's
@@ -193,6 +202,7 @@ MariaDB
 Memcached
 Metadata
 Microservices
+Mixpanel
 MobaXterm
 Moby
 MobyLinux
@@ -223,6 +233,7 @@ PHP
 PHP's
 PKI
 PM2
+POSIX
 POV
 PPA
 PPI
@@ -246,6 +257,8 @@ Prisma
 Pytest
 PythonAnywhere
 QuakeLive
+QuickBook's
+QuickBooks
 RDS
 README
 RESTPlus
@@ -255,12 +268,17 @@ RPMs
 RQ
 RSS
 RabbitMQ
+Rbenv
+Recurly
 RedHat
 Reddit
 Redis
 Redux
 Rekognition
+Rekognition's
+Resque
 Rogan
+Rollbar
 Route53
 Rubocop
 S3
@@ -280,6 +298,8 @@ SQS
 SSD
 SSDs
 SSL
+SageMaker
+ScaleGrid
 Scarlett
 SendGrid
 Sendy
@@ -292,6 +312,7 @@ Shopify's
 Shure
 Sidekiq
 Sidekiq's
+SocketIO
 Solr
 SparkPost
 Splunk
@@ -310,6 +331,7 @@ Technica
 Tensorflow
 Terraform
 Terraform's
+Textract
 That'll
 Theorycrafting
 Threadripper
@@ -352,6 +374,7 @@ WordPress
 XLR
 Xenial
 YAML
+YCombinator
 Youtube
 Zapier
 Zope
@@ -377,6 +400,7 @@ codebase
 codebases
 compgen
 config
+configs
 cron
 cryptocurrency
 datetime
@@ -392,6 +416,7 @@ dnsmasq
 dotfiles
 eksctl
 envsubst
+esbuild
 eslint
 eval
 foobar2000
@@ -416,9 +441,11 @@ iOS
 integrations
 iptables
 irreproducible
+ish
 jQuery
 journald
 keyring
+kubectl
 libs
 linters
 linux
@@ -490,6 +517,7 @@ toc
 tooltip
 transactional
 transcoding
+uncomment
 unlike
 unmaintained
 unmarking

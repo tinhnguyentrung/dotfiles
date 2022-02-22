@@ -102,6 +102,8 @@ Plug 'chrisbra/csv.vim'
 Plug 'ekalinin/dockerfile.vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'fatih/vim-go'
+Plug 'cespare/vim-toml', { 'branch': 'main' }
 Plug 'godlygeek/tabular' | Plug 'tpope/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 Plug 'jvirtanen/vim-hcl'
@@ -119,6 +121,7 @@ Plug 'vim-python/python-syntax'
 Plug 'vim-ruby/vim-ruby'
 Plug 'wgwoods/vim-systemd-syntax'
 Plug 'towolf/vim-helm'
+Plug 'hashivim/vim-terraform'
 
 call plug#end()
 
@@ -192,6 +195,10 @@ let mapleader=" "
 let maplocalleader=" "
 
 " Use a line cursor within insert mode and a block cursor everywhere else.
+"
+" Using iTerm2? Go-to preferences / profile / colors and disable the smart bar
+" cursor color. Then pick a cursor and highlight color that matches your theme.
+" That will ensure your cursor is always visible within insert mode.
 "
 " Reference chart of values:
 "   Ps = 0  -> blinking block.
@@ -309,9 +316,10 @@ map <Leader><Space> :let @/=''<CR>
 nnoremap <Leader>g gqap
 xnoremap <Leader>g gqa
 
-" Prevent x from overriding what's in the clipboard.
+" Prevent x and the delete key from overriding what's in the clipboard.
 noremap x "_x
 noremap X "_x
+noremap <Del> "_x
 
 " Prevent selecting and pasting from overwriting what you originally copied.
 xnoremap p pgvy
@@ -569,7 +577,7 @@ endfunction
 
 augroup FernGroup
   autocmd!
-  autocmd FileType fern call FernInit()
+  autocmd FileType fern setlocal norelativenumber | setlocal nonumber | call FernInit()
 augroup END
 
 " .............................................................................
