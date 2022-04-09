@@ -298,6 +298,9 @@ vim -E +PlugInstall +qall || true
 # Install virtual env python
 ###############################################################################
 
+printf "\n\nInstall pyenv ...\n"
+printf "Force remove .pyenv at HOME"
+rm -rf ~/.pyenv
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 CurrentPath=${PWD}
 cd ~/.pyenv && src/configure && make -C src
