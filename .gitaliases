@@ -1,3 +1,4 @@
+[alias]
 	diff = diff --word-diff
 
 # Human Aliases

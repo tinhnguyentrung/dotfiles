@@ -6,6 +6,4 @@
 
 [include]
 	path = ~/.gitconfig.user
-
-[alias]
     path = ~/.gitaliases
