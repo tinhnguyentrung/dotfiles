@@ -5,5 +5,5 @@
 	whitespace = red reverse
 
 [include]
-	path = ~/.gitconfig.user
+    path = ~/.gitconfig.user
     path = ~/.gitaliases

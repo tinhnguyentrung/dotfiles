@@ -295,6 +295,19 @@ printf "\n\nInstalling Vim plugins...\n"
 vim -E +PlugInstall +qall || true
 
 ###############################################################################
+# Install virtual env python
+###############################################################################
+
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+CurrentPath=${PWD}
+cd ~/.pyenv && src/configure && make -C src
+cd ${CurrentPath}
+
+git clone https://github.com/pyenv/pyenv-virtualenv.git \
+  ~/.pyenv/plugins/pyenv-virtualenv
+
+
+###############################################################################
 # Done!
 ###############################################################################
 

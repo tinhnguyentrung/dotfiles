@@ -23,3 +23,10 @@ export LESS_TERMCAP_so=$'\e[1;44;33m'  # begin standout-mode - info box
 export LESS_TERMCAP_me=$'\e[0m'        # end mode
 export LESS_TERMCAP_ue=$'\e[0m'        # end underline
 export LESS_TERMCAP_se=$'\e[0m'        # end standout-mode
+
+# Support virutal env python
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+

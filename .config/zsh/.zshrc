@@ -108,6 +108,9 @@ export FZF_DEFAULT_OPTS="--color=dark"
 # zsh-autosuggestions settings.
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 
+# python virtual env
+eval "$(pyenv virtualenv-init -)"
+
 # Load / source zsh plugins.
 . "${XDG_DATA_HOME}/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 . "${XDG_DATA_HOME}/zsh-autosuggestions/zsh-autosuggestions.zsh"
