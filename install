@@ -6,14 +6,14 @@ skip_system_packages="${1}"
 
 os_type="$(uname -s)"
 
-apt_packages="curl git iproute2 python3-pip ripgrep tmux vim-gtk zsh"
-apt_packages_optional="gnupg htop jq pass pwgen rsync shellcheck unzip"
+apt_packages="curl git iproute2 python3-pip ripgrep tmux vim-gtk wl-clipboard zsh"
+apt_packages_optional="gnupg htop inotify-tools jq pass pwgen rsync shellcheck unzip"
 
 brew_packages="diffutils git python ripgrep tmux vim zsh"
 brew_packages_optional="gnupg htop jq pass pwgen rsync shellcheck"
 
-install_asdf_version="v0.8.1"
-install_node_version="14.17.3"
+install_asdf_version="v0.11.0"
+install_node_version="18.12.1"
 
 ###############################################################################
 # Detect OS and distro type
@@ -68,6 +68,9 @@ function brew_install_self {
 
 function brew_install_packages {
     [ -x "$(command -v brew > /dev/null 2>&1)" ] && brew_install_self
+
+    # Ensure brew's paths are available for this script
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 
     # shellcheck disable=SC2086
     brew install ${brew_packages} ${brew_packages_optional}
@@ -159,6 +162,19 @@ cp "${clone_path}/.gitconfig.user" "${HOME}/.gitconfig.user"
 cp "${clone_path}/.gitaliases" "${HOME}/.gitaliases"
 
 ###############################################################################
+# macOS: Persist zprofile paths for brew
+###############################################################################
+
+if [ "${os_type}" == "macOS" ]; then
+    zsh_profile="${HOME}/.config/zsh/.zprofile"
+
+    if ! grep -q "eval.*homebrew.*shellenv" "${zsh_profile}" 2> /dev/null; then
+      # shellcheck disable=SC2016
+      printf '\neval "$(/opt/homebrew/bin/brew shellenv)"\n' >> "${zsh_profile}"
+    fi
+fi
+
+###############################################################################
 # Install zsh plugins
 ###############################################################################
 
@@ -202,8 +218,7 @@ ln -fs "${clone_path}/.gitconfig" "${HOME}/.gitconfig"
 ln -fs "${clone_path}/.vimrc" "${HOME}/.vimrc"
 ln -fs "${clone_path}/.vim/spell/en.utf-8.add" "${HOME}/.vim/spell/en.utf-8.add"
 ln -fs "${clone_path}/.tmux.conf" "${HOME}/.tmux.conf"
-ln -fs "${clone_path}/.local/bin/update-zsh-plugins" "${HOME}/.local/bin/update-zsh-plugins"
-ln -fs "${clone_path}/.local/bin/set-theme" "${HOME}/.local/bin/set-theme"
+ln -fs "${clone_path}/.local/bin/"* "${HOME}/.local/bin/"
 
 # And if you happen to be using WSL:
 sudo ln -fs "${clone_path}/etc/wsl.conf" /etc/wsl.conf
@@ -240,8 +255,7 @@ ln -fs "${clone_path}/.zshenv" "${HOME}/.zshenv" \
     && ln -fs "${clone_path}/.vimrc" "${HOME}/.vimrc" \
     && ln -fs "${clone_path}/.vim/spell/en.utf-8.add" "${HOME}/.vim/spell/en.utf-8.add" \
     && ln -fs "${clone_path}/.tmux.conf" "${HOME}/.tmux.conf" \
-    && ln -fs "${clone_path}/.local/bin/update-zsh-plugins" "${HOME}/.local/bin/update-zsh-plugins" \
-    && ln -fs "${clone_path}/.local/bin/set-theme" "${HOME}/.local/bin/set-theme"
+    && ln -fs "${clone_path}/.local/bin/"* "${HOME}/.local/bin/"
 
 if grep -qE "(Microsoft|microsoft|WSL)" /proc/version &>/dev/null; then
     sudo ln -fs "${clone_path}/etc/wsl.conf" /etc/wsl.conf
@@ -253,7 +267,7 @@ fi
 
 [ "${os_type}" != "macOS" ] && chsh -s "$(command -v zsh)"
 
-# shellcheck disable=SC1090
+# shellcheck disable=SC1091
 . "${HOME}/.config/zsh/.zprofile"
 
 ###############################################################################
@@ -266,7 +280,7 @@ rm -rf "${HOME}/.local/share/asdf"
 git clone --depth 1 https://github.com/asdf-vm/asdf.git --branch "${install_asdf_version}" \
   "${HOME}/.local/share/asdf"
 
-# shellcheck disable=SC1090
+# shellcheck disable=SC1091
 . "${HOME}/.local/share/asdf/asdf.sh"
 
 printf "\n\nInstalling node %s...\n" "${install_node_version}"

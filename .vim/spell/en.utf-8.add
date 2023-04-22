@@ -8,6 +8,7 @@ AMIs
 APIs
 APM
 APS
+ARGs
 AT2005
 AWS
 ActiveJob
@@ -24,11 +25,10 @@ B2B
 BackupPC
 Benchmarking
 BigQuery
-BitBucket
+Bitbucket
 Braintree
 CDN
 CI
-CI / CD
 CIDR
 CLI
 CMD
@@ -67,7 +67,9 @@ DDD
 DKIM
 DNS
 DaVinci
+DaemonSet
 Datadog
+Datadog's
 DebOps
 DevOps
 DexPot
@@ -75,6 +77,7 @@ DigitalOcean
 DigitalOcean's
 Django
 Docker's
+DockerCon
 Dockerfile
 Dockerfiles
 Dockerize
@@ -86,6 +89,7 @@ Dyno
 Dynos
 EBS
 EC2
+ECDSA
 ECR
 ECS
 EEx
@@ -96,6 +100,7 @@ ERD
 ESLint
 ETS
 Ecto
+Ed25519
 Edgestore
 ElastiCache
 Elasticsearch
@@ -115,6 +120,7 @@ Freshping
 GCP
 GCP's
 GDPR
+GID
 GKE
 GPG
 GVim
@@ -132,6 +138,7 @@ GnuCash
 GoRails
 Golang
 Golang's
+GoodJob
 Google'd
 GovCloud
 Gracenote
@@ -186,6 +193,7 @@ Kubernetes
 LOC
 LTS
 Laravel
+LastPass
 Linode
 Linode's
 LiveView
@@ -231,11 +239,14 @@ OVH
 Oban
 OpenAPI
 OpenJDK
+OpenSSH
+OpenWrt
 OpsGenie
 Overcomplicating
 PDFs
 PHP
 PHP's
+PII
 PKI
 PM2
 POSIX
@@ -260,6 +271,7 @@ PowerShell
 PowerToys
 Prepending
 Prisma
+Procfile
 PyPi
 Pytest
 PythonAnywhere
@@ -270,9 +282,11 @@ RDS
 README
 RESTPlus
 RESTful
+RGB
 RHEL
 RPMs
 RQ
+RSA
 RSS
 RabbitMQ
 Rbenv
@@ -351,6 +365,7 @@ Trix
 Turbolinks
 TypeScript
 UI
+UID
 URI
 Udemy
 Umar
@@ -363,6 +378,7 @@ VM
 VMs
 VNC
 VPC
+VPN
 VSCode
 VSCode's
 VST
@@ -380,6 +396,7 @@ WTF'd
 Webpack
 Webpacker
 WhatsApp
+Wi-Fi
 Wireshark
 Wistia
 WordPress
@@ -387,6 +404,7 @@ XLR
 Xenial
 YAML
 YCombinator
+Yay
 Youtube
 Zapier
 Zope
@@ -405,6 +423,7 @@ benchmarking
 blockchain
 boolean
 buildpack
+bundler
 card
 centos
 centric
@@ -418,6 +437,9 @@ cron
 cryptocurrency
 datetime
 declaratively
+decrypt
+decrypted
+decrypting
 deliverables
 deploy's
 deployable
@@ -437,6 +459,7 @@ extensibility
 foobar2000
 frictionless
 gifs
+git's
 gmail
 gmail's
 gunicorn
@@ -473,8 +496,11 @@ memcached
 microservice
 microservices
 middleware
+minified
 mintty
+mortem
 mtime
+multiline
 mysql
 mysqldump
 namespace
@@ -505,6 +531,7 @@ repo's
 repos
 repurposed
 resize
+rollout
 rsync
 runnable
 scalable
@@ -519,6 +546,7 @@ sql
 stateful
 stderr
 stdout
+subnet
 subnets
 sudo
 symlink
@@ -540,11 +568,15 @@ unlike
 unmaintained
 unmarking
 unopinionated
+unstage
+unstaged
+unstaging
 untracked
 url
 uvicorn
 uwsgi
 vCPUs
+vLAN
 versioning
 vhost
 vscode
@@ -553,6 +585,7 @@ webhook
 webhooks
 websockets
 whitelisting
+workspace
 writeable
 wsltty
 www

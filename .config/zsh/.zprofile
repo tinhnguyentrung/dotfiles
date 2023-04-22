@@ -8,7 +8,7 @@ export XDG_DATA_HOME="${HOME}/.local/share"
 export XDG_STATE_HOME="${HOME}/.local/state"
 
 # Add all local binaries to the system path.
-export PATH="${PATH}:${HOME}/.local/bin"
+export PATH="${PATH}:${HOME}/.local/bin:${HOME}/.local/bin/private"
 
 # Default programs to run.
 export EDITOR="vim"
@@ -24,9 +24,12 @@ export LESS_TERMCAP_me=$'\e[0m'        # end mode
 export LESS_TERMCAP_ue=$'\e[0m'        # end underline
 export LESS_TERMCAP_se=$'\e[0m'        # end standout-mode
 
-# Support virutal env python
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-
+# Ensure Docker is running on WSL 2. This expects you've installed Docker and
+# Docker Compose directly within your WSL distro instead of Docker Desktop, such as:
+#   - https://nickjanetakis.com/blog/install-docker-in-wsl-2-without-docker-desktop
+if grep -q "microsoft" /proc/version > /dev/null 2>&1; then
+    if service docker status 2>&1 | grep -q "is not running"; then
+        wsl.exe --distribution "${WSL_DISTRO_NAME}" --user root \
+            --exec /usr/sbin/service docker start > /dev/null 2>&1
+    fi
+fi
